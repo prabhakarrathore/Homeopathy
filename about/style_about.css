@@ -1,0 +1,245 @@
+main {
+    height: 100%;
+    position: relative;
+}
+
+.heroimg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    box-shadow: var(--box-shadow);
+    filter: brightness(.9);
+}
+
+.hero-text {
+    display: flex;
+    border-top-right-radius: 50px;
+    flex-direction: column;
+    text-align: start;
+    justify-content: start;
+    position: absolute;
+    bottom: 0%;
+    background-color: var(--primary-color);
+    padding: 64px;
+    color: var(--text-color-light);
+}
+
+.hero-text h5 {
+    font-size: var(--font-size-h1);
+}
+
+.hero-text p {
+    font-size: var(--font-size-lg);
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 16px 32px;
+    margin: 32px 0px 0px 0px;
+    border-radius: 50px;
+    width: max-content;
+}
+
+.section-contant {
+    height: fit-content;
+    padding: 64px;
+    margin: 64px;
+
+}
+
+.section-contant h3 {
+    font-size: var(--font-size-h3);
+    color: var(--primary-color);
+    padding: var(--padding);
+}
+
+.section-contant p {
+    font-size: var(--font-size-lg);
+    color: var(--text-shade);
+}
+
+.divider {
+    display: flex;
+}
+
+.para1 {
+    width: 30%;
+    padding: var(--padding);
+}
+
+.divider img {
+    width: 70%;
+    padding: var(--padding);
+}
+
+/* --- Basic Setup & Variables --- */
+:root {
+    --text-color: #333;
+    /* Dark grey for text */
+    --background-color: #fdfaf5;
+    /* Off-white / Cream background */
+    --cite-color: #555;
+    /* Slightly lighter grey for citation */
+    --serif-font: 'Garamond', 'Merriweather', Georgia, serif;
+    /* Example serif fonts */
+}
+
+/* --- Book Cover Container --- */
+.book-back-cover {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 30px;
+    width: 100%;
+    line-height: 1.6;
+    font-size: var(--font-size-lg);
+    /* Base font size, adjust as needed */
+}
+
+/* --- Top Section (Description + Image) --- */
+.top-section {
+    display: flex;
+    gap: 20px;
+    /* Space between text and image */
+    align-items: flex-start;
+    /* Align items to the top */
+    margin-bottom: 25px;
+}
+
+.description {
+    flex: 1;
+    /* Allow text to take available space */
+}
+
+.description p {
+    margin: 0;
+    /* Remove default paragraph margin */
+}
+
+.image-container {
+    flex-shrink: 0;
+    /* Prevent image container from shrinking */
+}
+
+.author-image {
+    display: block;
+    /* Remove extra space below image */
+    max-width: 340px;
+    /* Adjust image width */
+    height: auto;
+    /* filter: grayscale(100%); Optional: make image black and white */
+}
+
+/* --- Reviews Section --- */
+.reviews-section {
+    margin-bottom: 30px;
+}
+
+.reviews-section blockquote {
+    margin: 0 0 20px 0;
+    /* Reset default margins, add bottom margin */
+    padding: 0;
+    font-size: 0.95em;
+    /* Slightly smaller font for quotes */
+    /* Consider adding slight indentation if needed */
+    /* padding-left: 15px; */
+    /* border-left: 2px solid #eee; */
+}
+
+.reviews-section blockquote cite {
+    display: block;
+    /* Put citation on its own line */
+    text-align: right;
+    font-style: normal;
+    /* Or italic if preferred */
+    color: var(--cite-color);
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* --- Bottom Section (ISBN, Publisher, Price) --- */
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Align items to the bottom */
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    /* Subtle separator line */
+}
+
+/* --- ISBN / Barcode --- */
+.isbn-barcode {
+    font-family: 'Courier New', Courier, monospace;
+    /* Monospace for ISBN */
+    font-size: 0.85em;
+    color: #444;
+}
+
+.isbn-text {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.barcode-placeholder {
+    text-align: center;
+    /* Center numbers relative to barcode */
+}
+
+.barcode-top-number {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 2px;
+    text-align: right;
+    /* Align 90000 to the right */
+    padding-right: 5px;
+    /* Adjust spacing */
+}
+
+.barcode-image {
+    display: block;
+    /* Prevent extra space */
+    width: 130px;
+    /* Adjust barcode width */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 0 auto;
+    /* Center barcode image */
+}
+
+.barcode-bottom-number {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 3px;
+    letter-spacing: 1px;
+    /* Add spacing to numbers */
+}
+
+
+/* --- Publisher & Price --- */
+.publisher-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align text to the right */
+    text-align: right;
+}
+
+.publisher-info {
+    font-size: 0.85em;
+    color: var(--cite-color);
+    margin-bottom: 10px;
+}
+
+.publisher-info span {
+    display: block;
+    /* Each line of publisher info */
+}
+
+.price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--text-color);
+}

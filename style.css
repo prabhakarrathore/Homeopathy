@@ -1,0 +1,485 @@
+:root {
+    --faq-text-primary: #101828;
+    /* Dark text */
+    --faq-text-secondary: #475467;
+    /* Gray text */
+    --faq-border-color: #eaecf0;
+    /* Light gray border */
+    --faq-hover-bg: #f9fafb;
+    /* Slight background on hover */
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --transition-speed: 0.25s;
+
+    --primary-text: #101828;
+    /* Dark blue/black */
+    --secondary-text: #475467;
+    /* Gray */
+    --card-purple-bg: #6938ef;
+    /* Purple */
+    --card-purple-text: #ffffff;
+    --card-dark-bg: #1d2939;
+    /* Dark blue/gray */
+    --card-dark-text: #f9fafb;
+    /* Light gray/white */
+    --nav-btn-bg: #f2f4f7;
+    /* Light gray for buttons */
+    --nav-btn-color: var(--secondary-text);
+    --pagination-inactive: #eaecf0;
+    /* Light gray */
+    --pagination-active: #f0448a;
+    /* Pink/Red */
+    --font-family: 'Inter', sans-serif;
+    /* Example font */
+
+    --primary-color: #c065b1;
+    --secondary-color: #7f4786;
+    --accent-color: #fce1ff;
+    --background-color: #ffffff;
+    --background-color-dark: #000000;
+    --text-color-light: #ffffff;
+    --text-shade: #8798ad;
+    --text-color-dark: #000000;
+
+    --font-size-h1: 127px;
+    --font-size-h2: 90px;
+    --font-size-h3: 63px;
+    --font-size-h4: 45px;
+    --font-size-h5: 31px;
+    --font-size-h6: 22px;
+    --font-size-lg: 20px;
+    --font-size: 16px;
+    --font-size-small: 11px;
+
+
+    --font-weight: 500;
+    --line-height: 1.6;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+    --padding: 16px;
+    --margin: 16px;
+    --max-width: 1200px;
+    --header-height: 60px;
+    --footer-height: 40px;
+    --button-height: 40px;
+    --button-width: 120px;
+    --input-height: 40px;
+    --font-family: 'Roboto', sans-serif;
+
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #344054;
+    --sidebar-width: 280px;
+    --transition-speed: 0.3s;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--body-bg);
+    transition: background-color var(--transition-speed) ease;
+    position: relative;
+    width: auto;
+    min-height: 100vh;
+}
+
+/* --- Hamburger Button --- */
+.hamburger-btn {
+    background: none;
+    border: none;
+    /* border-radius: 8px; */
+    font-size: var(--font-size-h6);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.close {
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: var(--margin);
+    /* Icon color */
+}
+
+/* header  */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding);
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: var(--header-height);
+    z-index: 1001;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border-color);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-200%);
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+    z-index: 1000;
+    overflow-y: auto;
+    /* Allow scrolling if content exceeds height */
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    padding: 16px;
+}
+
+/* --- Sidebar Header --- */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 0 8px;
+    /* Align with nav items */
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    color: var(--sidebar-active-text);
+    /* Use active text color for logo */
+}
+
+.sidebar-logo h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--sidebar-active-text);
+}
+
+.version {
+    font-size: 0.8rem;
+    color: var(--sidebar-text-secondary);
+    font-weight: 500;
+}
+
+
+/* --- Navigation Groups --- */
+.nav-group {
+    list-style: none;
+    margin: 0 0 24px 0;
+    padding: 0;
+}
+
+.nav-group.utility-nav {
+    margin-top: auto;
+    /* Push utility nav towards the bottom */
+    margin-bottom: 24px;
+    /* Space before user profile */
+}
+
+.nav-group li {
+    margin-bottom: 4px;
+}
+
+.nav-group a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--sidebar-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-group a i:first-child {
+    /* Icon before text */
+    margin-right: 12px;
+    font-size: 1.1em;
+    width: 20px;
+    /* Ensure consistent icon alignment */
+    text-align: center;
+    color: var(--sidebar-icon-color);
+    transition: color 0.2s ease;
+}
+
+.nav-group a .nav-text {
+    flex-grow: 1;
+    /* Allow text to take available space */
+}
+
+.nav-group a:hover {
+    background-color: var(--sidebar-hover-bg);
+    color: var(--sidebar-active-text);
+    /* Often same as active text on hover */
+}
+
+.nav-group a:hover i:first-child {
+    color: var(--sidebar-active-icon);
+    /* Often same as active icon on hover */
+}
+
+
+.nav-group a.active {
+    background-color: var(--sidebar-active-bg);
+    color: var(--sidebar-active-text);
+    font-weight: 600;
+}
+
+.nav-group a.active i:first-child {
+    color: var(--sidebar-active-icon);
+}
+
+
+/* --- Badge (e.g., Notifications) --- */
+.badge {
+    margin-left: auto;
+    /* Push badge to the right */
+    background-color: var(--sidebar-badge-bg);
+    color: var(--sidebar-badge-text);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 16px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-group a.active .badge {
+    background-color: var(--sidebar-badge-active-bg);
+    color: var(--sidebar-badge-active-text);
+}
+
+
+
+/* --- Overlay for closing menu --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+    z-index: 999;
+    /* Below sidebar, above content */
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* logo-img */
+.logo-img {
+    height: 40px;
+}
+
+/* Ribbon */
+.ribbon {
+    width: 100%;
+    padding: var(--padding);
+    text-align: center;
+    font-size: var(--font-size);
+    background-color: var(--primary-color);
+    z-index: 1002;
+}
+
+/* icons */
+.sidebar-backdrop {
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: auto;
+    margin: 16px;
+}
+
+.sidebar-backdrop>a>i {
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--text-color-dark);
+}
+
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: start;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+
+.footer-ribbon {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: var(--padding);
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+
+}
+
+.Policy a {
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+.maestro {
+    width: 40px;
+    height: 40px;
+}
+
+.payment-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-icons i {
+    font-size: 32px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-details {
+    display: flex;
+    flex-direction: row;
+    padding: 64px;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 48px;
+}
+
+.footer-container h4 {
+    font-size: var(--font-size-h4);
+    color: var(--text-color-light);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 64px;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-container .fa-facebook {
+    font-size: 64px;
+    color: var(--text-color-light);
+    margin: 32px;
+}
+
+/* /// tabel /// */
+/* --- Basic Table Styling --- */
+.opening-hours-table {
+    width: 100%;
+    /* Table takes available width */
+    max-width: 600px;
+    /* Optional: Limit the maximum width */
+    border-collapse: collapse;
+    /* Merges cell borders for a cleaner look */
+    overflow: hidden;
+}
+
+/* --- Header Styling --- */
+.opening-hours-table thead th {
+    background-color: var(--secondary-text);
+    /* Dark grey background */
+    color: #ffffff;
+    /* White text */
+    padding: 12px 15px;
+    /* Padding inside header cells */
+
+    font-weight: 600;
+    /* Slightly bolder */
+    font-size: 0.9em;
+    /* Slightly smaller font */
+    text-transform: uppercase;
+    /* Uppercase text */
+    letter-spacing: 0.05em;
+    /* Slight letter spacing */
+}
+
+/* --- Body Cell Styling --- */
+.opening-hours-table tbody td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+
+}
+
+
+.CTA-1 {
+    text-align: center;
+    padding: 64px;
+    background-color: var(--primary-color);
+    margin: 64px 0px;
+}
+
+.CTA-1 h4 {
+    font-size: var(--font-size-h4);
+}
+
+
+.section-contant {
+    height: fit-content;
+    padding: 64px;
+    margin: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-contant h3 {
+    font-size: var(--font-size-h3);
+    color: var(--primary-color);
+    padding: var(--padding);
+}
+
+.section-contant p {
+    padding: var(--padding);
+    font-size: var(--font-size-lg);
+    color: var(--text-shade);
+}

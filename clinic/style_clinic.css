@@ -1,0 +1,80 @@
+main {
+    height: 100%;
+    position: relative;
+}
+
+.heroimg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    filter: brightness(1.1);
+}
+
+.hero-text {
+    display: flex;
+    border-top-right-radius: 50px;
+    flex-direction: column;
+    text-align: start;
+    justify-content: start;
+    position: absolute;
+    bottom: 0.5%;
+    background-color: var(--primary-color);
+    padding: 64px;
+    color: var(--text-color-light);
+}
+
+.hero-text h5 {
+    font-size: var(--font-size-h1);
+}
+
+.hero-text p {
+    font-size: var(--font-size-lg);
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 16px 32px;
+    margin: 32px 0px;
+    border-radius: 50px;
+    width: max-content;
+}
+
+
+.section-contant {
+    height: fit-content;
+    padding: 64px;
+    margin: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-contant h3 {
+    font-size: var(--font-size-h3);
+    color: var(--primary-color);
+    padding: var(--padding);
+}
+
+.section-contant p {
+    padding: var(--padding);
+    font-size: var(--font-size-lg);
+    color: var(--text-shade);
+}
+
+.divider {
+    display: flex;
+}
+
+.para1 {
+    width: 60%;
+    padding: var(--padding);
+}
+
+.divider img {
+    width: 40%;
+    padding: var(--padding);
+}

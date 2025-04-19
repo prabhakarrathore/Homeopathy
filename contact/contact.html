@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homeopathy for health - Contact Us</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style_contact.css">
+    <link rel="stylesheet" href="../search/search.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Optional Google Font (e.g., Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <s-header></s-header>
+    <div class="contact-container">
+        <!-- Left Column: Contact Info -->
+        <aside class="contact-info">
+
+            <div class="info-blocks">
+                <div class="contact-block">
+                    <i class="fa-regular fa-comment-dots icon"></i>
+                    <div>
+                        <h3>Chat to us</h3>
+                        <p>Our friendly team is here to help.</p>
+                        <a href="mailto:grainne@homeopathyforhealth.ie"> grainne@homeopathyforhealth.ie</a>
+                        <br>
+                        <span>
+                            <a href="tel:">083 0685880</a>
+                            (For Acutes Clinic)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <i class="fa-regular fa-map icon"></i>
+                    <div>
+                        <h3>Visit us</h3>
+                        <p>Come say hello at our office.</p>
+                        <address>
+                            13 Fade St., Dublin 2 <br>
+                            Co. Dublin, <br>
+                            Ireland
+                        </address>
+                        <br>
+                        <address>
+                            The Old School House<br>
+                            Bennekerry <br>
+                            Co. Carlow <br>
+                            R93 C2P7 <br>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <i class="fa-solid fa-phone icon"></i>
+                    <div>
+                        <h3>Call us</h3>
+                        <p>Mon-Fri from 9 AM to 8 PM.</p>
+                        <span>
+                            <a href="tel:">086 2600893</a>
+
+                        </span>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </aside>
+
+        <!-- Right Column: Contact Form -->
+        <section class="contact-form-section">
+            <h2>Contact.</h2>
+            <p class="form-intro">Tell us more about yourself and what you're got in mind.</p>
+
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <!-- <label for="name">Your name</label> -->
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <!-- <label for="email">Your email</label> -->
+                    <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <!-- <label for="project-details">Tell us a little about the project...</label> -->
+                    <input type="text" id="project-details" name="project-details" placeholder="Massage" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label-heading">How can we help?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="website-design" name="help_topic" value="website_design">
+                            <label for="website-design">I am human</label>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="submit-btn">Let's get started!</button>
+            </form>
+        </section>
+    </div>
+    <s-footer></s-footer>
+    <script src="../header/header.js"></script>
+    <script src="../footer/footer.js"></script>
+    <script src="../search/search.js"></script>
+</body>
+
+</html>

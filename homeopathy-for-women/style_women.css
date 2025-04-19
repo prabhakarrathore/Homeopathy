@@ -1,0 +1,417 @@
+main {
+    height: 100%;
+    position: relative;
+}
+
+.heroimg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    filter: brightness(1.1);
+}
+
+.hero-text {
+    display: flex;
+    border-top-right-radius: 50px;
+    flex-direction: column;
+    text-align: start;
+    justify-content: start;
+    position: absolute;
+    bottom: 0.4%;
+    background-color: var(--primary-color);
+    padding: 64px;
+    color: var(--text-color-light);
+}
+
+.hero-text h5 {
+    font-size: var(--font-size-h1);
+}
+
+.hero-text p {
+    font-size: var(--font-size-lg);
+}
+
+.btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 16px 32px;
+    margin: 32px 0px;
+    border-radius: 50px;
+    width: max-content;
+}
+
+
+.CTA-1 {
+    text-align: center;
+    padding: 64px;
+    background-color: var(--primary-color);
+    margin: 64px 0px;
+}
+
+.CTA-1 h4 {
+    font-size: var(--font-size-h4);
+    color: var(--text-color-dark);
+}
+
+
+.section-contant {
+    height: fit-content;
+    padding: 64px;
+    margin: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-contant h3 {
+    font-size: var(--font-size-h3);
+    color: var(--primary-color);
+    padding: var(--padding);
+}
+
+.section-contant p {
+    padding: var(--padding);
+    font-size: var(--font-size-lg);
+    color: var(--text-shade);
+}
+
+
+/* --- FAQ Section --- */
+.faq-section {
+    width: 100%;
+    padding: 64px;
+}
+
+.faq-section h2 {
+    font-size: var(--font-size-h3);
+    /* Responsive font size */
+    color: var(--primary-color);
+    margin-bottom: 32px;
+    font-weight: 600;
+}
+
+/* --- Accordion Container --- */
+.accordion {
+    border-top: 1px solid var(--faq-border-color);
+}
+
+/* --- Accordion Item (details element) --- */
+.accordion-item {
+    border-bottom: 1px solid var(--faq-border-color);
+}
+
+/* --- Accordion Header (summary element) --- */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    /* Vertical padding only */
+    cursor: pointer;
+    list-style: none;
+    /* Remove default marker */
+    font-weight: 500;
+    font-size: var(--font-size-h6);
+    color: var(--faq-text-primary);
+    transition: background-color var(--transition-speed) ease;
+}
+
+/* Remove default arrow on Chrome/Safari */
+.accordion-header::-webkit-details-marker {
+    display: none;
+}
+
+/* Remove default arrow on Firefox */
+.accordion-header::marker {
+    display: none;
+}
+
+.accordion-header:hover {
+    background-color: var(--faq-hover-bg);
+    /* Add padding if needed on hover for visual cue */
+    /* padding: 20px 10px;
+    margin: 0 -10px; */
+}
+
+/* --- Accordion Icon --- */
+.accordion-icon {
+    display: inline-block;
+    width: 16px;
+    /* Adjust size */
+    height: 16px;
+    margin-left: 16px;
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    transition: transform var(--transition-speed) ease-in-out;
+    position: relative;
+    /* For pseudo-element positioning */
+}
+
+/* Style the icon using pseudo-elements (like a caret) */
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    /* Adjust line length */
+    height: 2px;
+    /* Adjust line thickness */
+    background-color: var(--faq-text-secondary);
+    /* Icon color */
+    border-radius: 1px;
+    top: 50%;
+    left: 50%;
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+/* Down arrow shape */
+.accordion-icon::before {
+    transform: translate(-80%, -50%) rotate(45deg);
+}
+
+.accordion-icon::after {
+    transform: translate(-20%, -50%) rotate(-45deg);
+}
+
+/* Up arrow shape when open */
+.accordion-item[open]>.accordion-header .accordion-icon::before {
+    transform: translate(-80%, -50%) rotate(-45deg);
+}
+
+.accordion-item[open]>.accordion-header .accordion-icon::after {
+    transform: translate(-20%, -50%) rotate(45deg);
+}
+
+
+/* --- Accordion Content --- */
+.accordion-content {
+    padding: 0 0 20px 0;
+    /* Padding below the content */
+    color: var(--faq-text-secondary);
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    /* Animation - using grid for smooth height transition */
+    display: grid;
+    grid-template-rows: 0fr;
+    /* Collapsed state */
+    transition: grid-template-rows var(--transition-speed) ease-in-out;
+}
+
+.accordion-content>p {
+    margin: 0;
+    /* Remove default paragraph margin */
+    overflow: hidden;
+    /* Hide content when row height is 0 */
+}
+
+/* --- Open State Styling --- */
+.accordion-item[open]>.accordion-content {
+    grid-template-rows: 1fr;
+    /* Expanded state */
+}
+
+
+/* Optional: Add focus state for accessibility */
+.accordion-header:focus-visible {
+    outline: 2px solid dodgerblue;
+    outline-offset: 2px;
+    background-color: var(--faq-hover-bg);
+}
+
+/* --- Health Conditions Section --- */
+.health-conditions .container>p {
+    /* Paragraph below heading */
+    max-width: 100%;
+    padding: var(--padding);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.container>h2 {
+    font-size: var(--font-size-h3);
+    color: var(--primary-color);
+    margin-bottom: 32px;
+    font-weight: 600;
+}
+
+.container>p {
+    font-size: var(--font-size-lg);
+    color: var(--text-shade);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.conditions-list {
+    width: 80%;
+    font-size: var(--font-size-lg);
+    color: var(--text-shade);
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    column-count: 3;
+    /* Create 3 columns */
+    column-gap: 64px;
+}
+
+.conditions-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: var(--font-size);
+    break-inside: avoid-column;
+    /* Prevent items breaking across columns */
+}
+
+.conditions-list i {
+    color: var(--primary-color);
+}
+
+/* ======================================== */
+/* === Specific Conditions Section Styles === */
+/* ======================================== */
+
+/* --- Parent Section Styling --- */
+.specific-conditions {
+    /* Assumes section-padding and light-bg are defined elsewhere */
+    /* Example definitions if not already present: */
+    /* padding: 60px 0; */
+    /* background-color: #f8f8f8; /* var(--light-grey) */
+}
+
+/* --- Content/Image Block (General) --- */
+.content-image-block {
+    display: flex;
+    flex-direction: column;
+    /* Stack text and image vertically by default (mobile) */
+    gap: 30px;
+    /* Space between text and image when stacked */
+    align-items: center;
+    /* Center items when stacked */
+    margin-bottom: 60px;
+    /* Space between each condition block */
+}
+
+.content-image-block:last-child {
+    margin-bottom: 0;
+    /* No margin below the last block */
+}
+
+/* --- Text Content Styling --- */
+.text-content {
+    flex: 1;
+    /* Allow text block to take available space in row layout */
+    width: 100%;
+    /* Full width when stacked */
+}
+
+.text-content h2 {
+    /* Assumes h2 styling is defined globally, otherwise add: */
+    /* font-family: var(--font-secondary); */
+    /* color: var(--primary-color); */
+    /* font-size: 1.8em; */
+    margin-bottom: 1em;
+    /* Space below heading */
+}
+
+.text-content p {
+    /* Assumes p styling is defined globally, otherwise add: */
+    /* font-family: var(--font-primary); */
+    /* color: var(--text-light); */
+    /* line-height: 1.7; */
+    margin-bottom: 1em;
+    /* Space between paragraphs */
+}
+
+.text-content p:last-child {
+    margin-bottom: 0;
+    /* No margin on last paragraph */
+}
+
+/* --- Image Content Styling --- */
+.image-content {
+    flex-shrink: 0;
+    /* Prevent image container from shrinking in row layout */
+    width: 100%;
+    /* Full width when stacked */
+    max-width: 500px;
+    /* Limit image width on mobile */
+}
+
+.image-content img {
+    display: block;
+    /* Remove extra space below image */
+    width: 100%;
+    /* Make image fill container */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* var(--image-border-radius) */
+    /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    /* Subtle shadow */
+}
+
+/* --- Desktop/Tablet Layout (Side-by-Side & Alternating) --- */
+@media (min-width: 768px) {
+    .content-image-block {
+        flex-direction: row;
+        /* Arrange text and image side-by-side */
+        gap: 50px;
+        /* Space between text and image */
+        align-items: center;
+        /* Vertically align items in the middle */
+        max-width: 100%;
+        /* Reset max-width */
+    }
+
+    .image-content {
+        flex-basis: 45%;
+        /* Define base width for image container */
+        width: auto;
+        /* Override stacked width */
+        max-width: none;
+        /* Remove mobile max-width */
+    }
+
+    /* Alternating Order using Flexbox 'order' property */
+    .content-image-block.image-left .image-content {
+        order: 1;
+        /* Image comes first */
+    }
+
+    .content-image-block.image-left .text-content {
+        order: 2;
+        /* Text comes second */
+    }
+
+    .content-image-block.image-right .image-content {
+        order: 2;
+        /* Image comes second */
+    }
+
+    .content-image-block.image-right .text-content {
+        order: 1;
+        /* Text comes first */
+    }
+}
+
+/* Optional: Increase gap on very large screens */
+@media (min-width: 992px) {
+    .content-image-block {
+        gap: 70px;
+    }
+
+    .image-content {
+        flex-basis: 48%;
+        /* Slightly adjust image width if needed */
+    }
+}
