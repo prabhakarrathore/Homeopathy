@@ -1,77 +1,116 @@
+/* --- Base Variables --- */
 :root {
-    --faq-text-primary: #101828;
-    /* Dark text */
-    --faq-text-secondary: #475467;
-    /* Gray text */
-    --faq-border-color: #eaecf0;
-    /* Light gray border */
-    --faq-hover-bg: #f9fafb;
-    /* Slight background on hover */
-    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --transition-speed: 0.25s;
-
-    --primary-text: #101828;
-    /* Dark blue/black */
-    --secondary-text: #475467;
-    /* Gray */
-    --card-purple-bg: #6938ef;
-    /* Purple */
-    --card-purple-text: #ffffff;
-    --card-dark-bg: #1d2939;
-    /* Dark blue/gray */
-    --card-dark-text: #f9fafb;
-    /* Light gray/white */
-    --nav-btn-bg: #f2f4f7;
-    /* Light gray for buttons */
-    --nav-btn-color: var(--secondary-text);
-    --pagination-inactive: #eaecf0;
-    /* Light gray */
-    --pagination-active: #f0448a;
-    /* Pink/Red */
-    --font-family: 'Inter', sans-serif;
-    /* Example font */
-
+    /* Colors */
     --primary-color: #c065b1;
     --secondary-color: #7f4786;
     --accent-color: #fce1ff;
     --background-color: #ffffff;
     --background-color-dark: #000000;
+    /* Not used in current selectors */
     --text-color-light: #ffffff;
     --text-shade: #8798ad;
     --text-color-dark: #000000;
+    --body-bg: #ffffff;
+    /* Default background */
 
-    --font-size-h1: 127px;
-    --font-size-h2: 90px;
-    --font-size-h3: 63px;
-    --font-size-h4: 45px;
-    --font-size-h5: 31px;
-    --font-size-h6: 22px;
-    --font-size-lg: 20px;
-    --font-size: 16px;
-    --font-size-small: 11px;
+    /* FAQ/Testimonial Text */
+    --faq-text-primary: #101828;
+    --primary-text: #101828;
+    /* Combined testimonial/general dark text */
+    --faq-text-secondary: #475467;
+    --secondary-text: #475467;
+    /* Combined testimonial/general gray text */
 
+    /* Borders / Hovers */
+    --faq-border-color: #eaecf0;
+    --faq-hover-bg: #f9fafb;
 
+    /* Testimonial Card Specific */
+    --card-purple-bg: #6938ef;
+    --card-purple-text: #ffffff;
+    --card-dark-bg: #1d2939;
+    --card-dark-text: #f9fafb;
+
+    /* Nav/Pagination */
+    --nav-btn-bg: #f2f4f7;
+    --nav-btn-color: var(--secondary-text);
+    --pagination-inactive: #eaecf0;
+    --pagination-active: #f0448a;
+
+    /* Sidebar Specific */
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #344054;
+    --sidebar-text-secondary: #667085;
+    /* Added for version text */
+    --sidebar-border-color: #eaecf0;
+    /* Added */
+    --sidebar-hover-bg: #f9fafb;
+    --sidebar-active-bg: #f9f5ff;
+    /* Example active background */
+    --sidebar-active-text: #6941c6;
+    /* Example active text */
+    --sidebar-icon-color: #667085;
+    /* Example icon color */
+    --sidebar-active-icon: var(--sidebar-active-text);
+    /* Example active icon color */
+    --sidebar-badge-bg: #f2f4f7;
+    /* Example badge background */
+    --sidebar-badge-text: #344054;
+    /* Example badge text */
+    --sidebar-badge-active-bg: var(--sidebar-active-text);
+    /* Example active badge */
+    --sidebar-badge-active-text: #ffffff;
+    /* Example active badge text */
+    --sidebar-width: 280px;
+
+    /* Typography */
+    --font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Consolidated */
+    --font-size-h1: 4rem;
+    /* Adjusted from 127px */
+    --font-size-h2: 3rem;
+    /* Adjusted from 90px */
+    --font-size-h3: 2.25rem;
+    /* Adjusted from 63px */
+    --font-size-h4: 1.75rem;
+    /* Adjusted from 45px */
+    --font-size-h5: 1.25rem;
+    /* Adjusted from 31px */
+    --font-size-h6: 1.1rem;
+    /* Adjusted from 22px */
+    --font-size-lg: 1rem;
+    /* Adjusted from 20px */
+    --font-size: 0.9rem;
+    /* Base size */
+    --font-size-small: 0.75rem;
+    /* Adjusted from 11px */
     --font-weight: 500;
     --line-height: 1.6;
+
+    /* Layout & Sizing */
     --border-radius: 8px;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    --transition: all 0.3s ease;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adjusted alpha */
     --padding: 16px;
     --margin: 16px;
     --max-width: 1200px;
     --header-height: 60px;
-    --footer-height: 40px;
+    --footer-height: auto;
+    /* Let content define footer height */
     --button-height: 40px;
+    /* Not used in current selectors */
     --button-width: 120px;
+    /* Not used in current selectors */
     --input-height: 40px;
-    --font-family: 'Roboto', sans-serif;
+    /* Not used in current selectors */
 
-    --sidebar-bg: #ffffff;
-    --sidebar-text: #344054;
-    --sidebar-width: 280px;
+    /* Transitions */
     --transition-speed: 0.3s;
+    --transition: all var(--transition-speed) ease;
+    /* Use variable */
 }
 
+/* --- Global Reset & Body --- */
 *,
 *::before,
 *::after {
@@ -85,45 +124,66 @@ body {
     background-color: var(--body-bg);
     transition: background-color var(--transition-speed) ease;
     position: relative;
-    width: auto;
+    width: 100%;
     min-height: 100vh;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--text-color-dark);
+    /* Default text color */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
-/* --- Hamburger Button --- */
-.hamburger-btn {
-    background: none;
-    border: none;
-    /* border-radius: 8px; */
-    font-size: var(--font-size-h6);
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
-}
-
-.close {
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin: var(--margin);
-    /* Icon color */
-}
-
-/* header  */
+/* --- Header --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padding);
+    padding: 0 var(--padding);
+    /* Vertical padding implicit in height */
     background-color: var(--background-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: var(--header-height);
+    position: sticky;
+    /* Make header sticky */
+    top: 0;
     z-index: 1001;
+}
+
+.logo-img {
+    height: calc(var(--header-height) * 0.6);
+    /* Adjust logo size relative to header */
+    width: auto;
+}
+
+/* --- Hamburger Button & Close Button --- */
+.hamburger-btn,
+.close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: inline-flex;
+    /* Ensure proper alignment */
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-btn {
+    font-size: var(--font-size-h5);
+    /* Adjust size */
+    width: 40px;
+    height: 40px;
+    color: var(--text-color-dark);
+    /* Ensure visibility */
+    /* box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05); */
+    /* Optional shadow */
+}
+
+.close {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: var(--margin);
 }
 
 /* --- Sidebar --- */
@@ -132,16 +192,19 @@ header {
     top: 0;
     left: 0;
     width: var(--sidebar-width);
+    max-width: 90%;
+    /* Prevent sidebar taking full screen on mobile */
     height: 100vh;
     background-color: var(--sidebar-bg);
     border-right: 1px solid var(--sidebar-border-color);
     display: flex;
     flex-direction: column;
-    transform: translateX(-200%);
+    transform: translateX(-105%);
+    /* Hide slightly off screen */
     transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
-    z-index: 1000;
+    z-index: 1002;
+    /* Above header */
     overflow-y: auto;
-    /* Allow scrolling if content exceeds height */
 }
 
 .sidebar.open {
@@ -153,33 +216,37 @@ header {
     display: flex;
     flex-direction: column;
     height: 100%;
-
-    padding: 16px;
+    padding: var(--padding);
 }
 
-/* --- Sidebar Header --- */
+/* Sidebar Header */
 .sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
     padding: 0 8px;
-    /* Align with nav items */
 }
 
 .sidebar-logo {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.3rem;
     color: var(--sidebar-active-text);
-    /* Use active text color for logo */
+}
+
+.sidebar-logo img {
+    /* Assuming logo is an image */
+    height: 30px;
+    /* Adjust as needed */
+    width: auto;
 }
 
 .sidebar-logo h2 {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--sidebar-active-text);
+    /* Use consistent variable */
 }
 
 .version {
@@ -188,8 +255,7 @@ header {
     font-weight: 500;
 }
 
-
-/* --- Navigation Groups --- */
+/* Sidebar Navigation */
 .nav-group {
     list-style: none;
     margin: 0 0 24px 0;
@@ -199,8 +265,12 @@ header {
 .nav-group.utility-nav {
     margin-top: auto;
     /* Push utility nav towards the bottom */
-    margin-bottom: 24px;
-    /* Space before user profile */
+    padding-top: 16px;
+    /* Space above user profile */
+    border-top: 1px solid var(--sidebar-border-color);
+    /* Separator */
+    margin-bottom: 0;
+    /* Remove default bottom margin */
 }
 
 .nav-group li {
@@ -214,17 +284,16 @@ header {
     border-radius: 6px;
     text-decoration: none;
     color: var(--sidebar-text);
-    font-weight: 500;
+    font-weight: var(--font-weight);
     font-size: 0.95rem;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-group a i:first-child {
-    /* Icon before text */
+    /* Assumes Font Awesome or similar */
     margin-right: 12px;
     font-size: 1.1em;
     width: 20px;
-    /* Ensure consistent icon alignment */
     text-align: center;
     color: var(--sidebar-icon-color);
     transition: color 0.2s ease;
@@ -232,39 +301,20 @@ header {
 
 .nav-group a .nav-text {
     flex-grow: 1;
-    /* Allow text to take available space */
 }
 
 .nav-group a:hover {
     background-color: var(--sidebar-hover-bg);
     color: var(--sidebar-active-text);
-    /* Often same as active text on hover */
-}
-
-.nav-group a:hover i:first-child {
-    color: var(--sidebar-active-icon);
-    /* Often same as active icon on hover */
 }
 
 
-.nav-group a.active {
-    background-color: var(--sidebar-active-bg);
-    color: var(--sidebar-active-text);
-    font-weight: 600;
-}
-
-.nav-group a.active i:first-child {
-    color: var(--sidebar-active-icon);
-}
-
-
-/* --- Badge (e.g., Notifications) --- */
+/* Sidebar Badge */
 .badge {
     margin-left: auto;
-    /* Push badge to the right */
     background-color: var(--sidebar-badge-bg);
     color: var(--sidebar-badge-text);
-    font-size: 0.75rem;
+    font-size: var(--font-size-small);
     font-weight: 500;
     padding: 2px 8px;
     border-radius: 16px;
@@ -276,9 +326,7 @@ header {
     color: var(--sidebar-badge-active-text);
 }
 
-
-
-/* --- Overlay for closing menu --- */
+/* --- Overlay --- */
 .overlay {
     position: fixed;
     top: 0;
@@ -289,78 +337,59 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
-    z-index: 999;
+    z-index: 1001;
     /* Below sidebar, above content */
 }
 
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
 
-/* logo-img */
-.logo-img {
-    height: 40px;
-}
-
-/* Ribbon */
+/* --- Ribbon --- */
 .ribbon {
     width: 100%;
-    padding: var(--padding);
+    padding: calc(var(--padding) * 0.5) var(--padding);
+    /* Reduced padding */
     text-align: center;
-    font-size: var(--font-size);
+    font-size: var(--font-size-small);
+    /* Smaller font */
     background-color: var(--primary-color);
-    z-index: 1002;
+    color: var(--text-color-light);
+    z-index: 1000;
+    /* Below header */
 }
 
-/* icons */
-.sidebar-backdrop {
-    height: min-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    width: auto;
-    margin: 16px;
-}
-
-.sidebar-backdrop>a>i {
-    text-decoration: none;
-    font-size: 24px;
-    color: var(--text-color-dark);
-}
-
-
+/* --- Footer --- */
 footer {
     display: flex;
     width: 100%;
-    height: 100%;
     flex-direction: column;
     text-align: start;
     background-color: var(--secondary-color);
     color: var(--text-color-light);
+    margin-top: auto;
+    /* Push footer to bottom if content is short */
 }
-
 
 .footer-ribbon {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    /* Stack on mobile */
+    align-items: center;
+    /* Center items */
+    justify-content: center;
+    gap: var(--padding);
+    /* Space between stacked items */
     padding: var(--padding);
     background-color: var(--primary-color);
     color: var(--text-color-light);
-
+    font-size: var(--font-size-small);
+    text-align: center;
 }
 
 .Policy a {
     text-decoration: none;
     color: var(--text-color-light);
-}
-
-.maestro {
-    width: 40px;
-    height: 40px;
+    margin: 0 8px;
+    /* Add space around policy links */
 }
 
 .payment-icons {
@@ -368,118 +397,367 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    /* Increased gap */
+    flex-wrap: wrap;
+    /* Allow wrapping */
 }
 
-.payment-icons i {
-    font-size: 32px;
+.payment-icons i,
+.payment-icons svg {
+    /* Target maestro image */
+    font-size: 28px;
+
+}
+
+.footer-details {
+    display: flex;
+    flex-direction: column;
+    /* Stack on mobile */
+    padding: calc(var(--padding) * 2);
+    /* Reduced padding */
+    gap: calc(var(--padding) * 2);
+    /* Space between columns */
 }
 
 .footer-col {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 8px;
+    text-align: center;
+    /* Center text in columns on mobile */
 }
 
-.footer-details {
-    display: flex;
-    flex-direction: row;
-    padding: 64px;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 48px;
-}
-
-.footer-container h4 {
-    font-size: var(--font-size-h4);
+.footer-col h4 {
+    /* Target headings within columns */
+    font-size: var(--font-size-h6);
+    /* Adjust heading size */
+    margin-bottom: 8px;
     color: var(--text-color-light);
 }
+
+.footer-col a,
+/* Style links within columns */
+.footer-col p {
+    font-size: var(--font-size-small);
+    color: var(--text-color-light);
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.footer-col a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
 
 .footer-container {
+    /* Social Media Section */
     display: flex;
-    justify-content: space-between;
-    padding: 0px 64px;
+    flex-direction: column;
+    /* Stack on mobile */
+    justify-content: center;
+    padding: var(--padding) calc(var(--padding) * 2);
     align-items: center;
-    gap: 16px;
+    gap: var(--padding);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle separator */
 }
 
-.footer-container .fa-facebook {
-    font-size: 64px;
-    color: var(--text-color-light);
-    margin: 32px;
+/* Example: Assuming .footer-container contains logo and social */
+.footer-container .logo-img {
+    /* Style footer logo */
+    height: 30px;
+    opacity: 0.8;
 }
 
-/* /// tabel /// */
-/* --- Basic Table Styling --- */
+.sidebar-backdrop {
+    /* Renamed/Repurposed for Social Icons */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Space between social icons */
+    width: auto;
+    margin: 0;
+    /* Remove margin */
+}
+
+.sidebar-backdrop>a>i {
+    /* Style social icons */
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--text-color-dark);
+    transition: color var(--transition-speed) ease;
+}
+
+.sidebar-backdrop>a:hover>i {
+    color: var(--accent-color);
+    /* Example hover color */
+}
+
+/* --- Table --- */
+.opening-hours-table-wrapper {
+    /* Add a wrapper for potential overflow */
+    overflow-x: auto;
+    width: 100%;
+    margin: var(--margin) 0;
+    /* Add vertical margin */
+}
+
 .opening-hours-table {
     width: 100%;
-    /* Table takes available width */
-    max-width: 600px;
-    /* Optional: Limit the maximum width */
+    min-width: 300px;
+    /* Prevent table collapsing too much */
     border-collapse: collapse;
-    /* Merges cell borders for a cleaner look */
-    overflow: hidden;
 }
 
-/* --- Header Styling --- */
 .opening-hours-table thead th {
     background-color: var(--secondary-text);
-    /* Dark grey background */
     color: #ffffff;
-    /* White text */
-    padding: 12px 15px;
-    /* Padding inside header cells */
-
+    padding: 10px 12px;
+    /* Reduced padding */
     font-weight: 600;
-    /* Slightly bolder */
-    font-size: 0.9em;
-    /* Slightly smaller font */
+    font-size: var(--font-size-small);
+    /* Smaller font */
     text-transform: uppercase;
-    /* Uppercase text */
     letter-spacing: 0.05em;
-    /* Slight letter spacing */
+    text-align: left;
+    /* Align headers left */
 }
 
-/* --- Body Cell Styling --- */
+.opening-hours-table thead th:last-child {
+    text-align: right;
+    /* Align last header right */
+}
+
+
 .opening-hours-table tbody td {
-    padding: 12px 15px;
-    text-align: center;
-    border-bottom: 1px solid #e2e8f0;
-
+    padding: 10px 12px;
+    /* Reduced padding */
+    text-align: left;
+    /* Align cells left */
+    border-bottom: 1px solid var(--faq-border-color);
+    /* Use variable */
+    font-size: var(--font-size);
 }
 
+.opening-hours-table tbody td:last-child {
+    text-align: right;
+    /* Align last cell right */
+    font-weight: 500;
+}
 
+/* --- CTA Section --- */
 .CTA-1 {
     text-align: center;
-    padding: 64px;
+    padding: calc(var(--padding) * 2.5) var(--padding);
+    /* Adjusted padding */
     background-color: var(--primary-color);
-    margin: 64px 0px;
+    margin: calc(var(--margin) * 2) 0;
+    /* Vertical margin only */
+    color: var(--text-color-light);
 }
 
 .CTA-1 h4 {
-    font-size: var(--font-size-h4);
+    font-size: var(--font-size-h5);
+    /* Adjusted size */
+    margin-bottom: var(--margin);
 }
 
+/* Add styles for button within CTA if needed */
+.CTA-1 .btn {
+    background-color: var(--text-color-light);
+    /* Example */
+    color: var(--primary-color);
+    margin-top: var(--margin);
+}
 
+/* --- Generic Content Section (Consolidated) --- */
 .section-contant {
     height: fit-content;
-    padding: 64px;
-    margin: 64px;
+    padding: calc(var(--padding) * 2) var(--padding);
+    /* Adjusted padding */
+    margin: calc(var(--margin) * 2) 0;
+    /* Vertical margin */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* Center align content */
+    text-align: center;
+    /* Center align text */
 }
 
 .section-contant h3 {
-    font-size: var(--font-size-h3);
+    font-size: var(--font-size-h4);
+    /* Adjusted size */
     color: var(--primary-color);
-    padding: var(--padding);
+    margin-bottom: var(--margin);
+    /* Use margin */
 }
 
 .section-contant p {
-    padding: var(--padding);
     font-size: var(--font-size-lg);
     color: var(--text-shade);
+    max-width: 600px;
+    /* Limit width for readability */
+    line-height: var(--line-height);
+    margin-bottom: var(--margin);
+    /* Space below paragraph */
+}
+
+.section-contant p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ============================================ */
+/* === Tablet Styles (e.g., 768px and up) === */
+/* ============================================ */
+@media (min-width: 768px) {
+    :root {
+        /* Optional: Adjust base font size slightly for tablets */
+        /* --font-size: 1rem; */
+    }
+
+    /* --- Header --- */
+    header {
+        padding: 0 calc(var(--padding) * 1.5);
+    }
+
+    /* --- Ribbon --- */
+    .ribbon {
+        padding: calc(var(--padding) * 0.75) var(--padding);
+        font-size: var(--font-size);
+    }
+
+    /* --- Footer --- */
+    .footer-ribbon {
+        flex-direction: row;
+        /* Side-by-side */
+        justify-content: space-around;
+        align-items: center;
+        font-size: var(--font-size);
+    }
+
+    .footer-details {
+        flex-direction: row;
+        /* Side-by-side */
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Align tops of columns */
+        padding: calc(var(--padding) * 3);
+        gap: calc(var(--padding) * 3);
+    }
+
+    .footer-col {
+        text-align: left;
+        /* Align text left */
+        gap: 10px;
+    }
+
+    .footer-col h4 {
+        font-size: var(--font-size-h5);
+    }
+
+    .footer-col a,
+    .footer-col p {
+        font-size: var(--font-size);
+    }
+
+
+    .footer-container {
+        flex-direction: row;
+        /* Side-by-side */
+        font-size: var(--font-size);
+        justify-content: space-between;
+        padding: var(--padding) calc(var(--padding) * 3);
+    }
+
+    /* --- Table --- */
+    .opening-hours-table thead th,
+    .opening-hours-table tbody td {
+        padding: 12px 15px;
+        /* Restore padding */
+    }
+
+    .opening-hours-table thead th {
+        font-size: 0.9em;
+        /* Restore font size */
+    }
+
+    /* --- CTA & Content Section --- */
+    .CTA-1 {
+        padding: calc(var(--padding) * 3) var(--padding);
+    }
+
+    .CTA-1 h4 {
+        font-size: var(--font-size-h4);
+    }
+
+    .section-contant {
+        padding: calc(var(--padding) * 3);
+        margin: calc(var(--margin) * 3) 0;
+    }
+
+    .section-contant h3 {
+        font-size: var(--font-size-h3);
+    }
+
+    .section-contant p {
+        font-size: var(--font-size-lg);
+    }
+
+}
+
+
+/* ============================================ */
+/* === Desktop Styles (e.g., 1024px and up) === */
+/* ============================================ */
+@media (min-width: 1024px) {
+
+    /* --- Header --- */
+    header {
+        padding: 0 calc(var(--padding) * 2);
+    }
+
+
+    /* --- Footer --- */
+    .footer-details,
+    .footer-container {
+        font-size: var(--font-size-h5);
+        padding-left: calc(var(--padding) * 4);
+        padding-right: calc(var(--padding) * 4);
+    }
+
+    .footer-container i {
+        font-size: 3.5rem;
+        /* Adjust icon size */
+    }
+
+    .footer-details {
+        gap: calc(var(--padding) * 4);
+    }
+
+    /* --- CTA & Content Section --- */
+    .CTA-1 {
+        padding: calc(var(--padding) * 4) var(--padding);
+    }
+
+    .CTA-1 h4 {
+        font-size: var(--font-size-h4);
+        /* Keep or adjust */
+    }
+
+    .section-contant {
+        padding: calc(var(--padding) * 4);
+        margin: calc(var(--margin) * 4) 0;
+    }
+
+    .section-contant h3 {
+        font-size: var(--font-size-h3);
+        /* Keep or adjust */
+    }
 }

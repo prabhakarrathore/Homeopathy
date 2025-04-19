@@ -271,7 +271,7 @@ main {
 }
 
 .hero-text h1 {
-    font-size: 128pt;
+    font-size: 118px;
 }
 
 .hero-text p {
@@ -286,4 +286,18 @@ main {
     margin: 32px 0px;
     border-radius: 50px;
     width: max-content;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 72px;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
 }

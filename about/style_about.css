@@ -1,181 +1,253 @@
-main {
-    height: 100%;
-    position: relative;
+/* --- Base Styles & Variables (Apply to all sizes unless overridden) --- */
+:root {
+    --text-color: #333;
+    --background-color: #fdfaf5;
+    --cite-color: #555;
+    --text-color-light: #ffffff;
+    /* Assuming definition */
+
+    --text-shade: #666666;
+    /* Placeholder */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Placeholder */
+    --border-radius: 8px;
+    /* Placeholder */
+    --padding: 16px;
+    /* Placeholder for default padding */
+
+    /* Font Size Variables (Ensure these are defined) */
+    --font-size-h1: 2.5rem;
+    --font-size-h3: 1.75rem;
+    --font-size-lg: 1rem;
+    --font-size: 0.9rem;
+    /* Base font size */
+
+    /* Example Serif Font */
+    --serif-font: 'Garamond', 'Merriweather', Georgia, serif;
 }
 
+/* --- General Layout --- */
+main {
+    /* height: 100%; */
+    /* Careful with 100% height, often needs parent height */
+    min-height: 100vh;
+    /* Often better */
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+/* --- Hero Section --- */
 .heroimg {
     width: 100%;
-    height: auto;
+    /* height: fit-content; */
     max-width: 100%;
     box-shadow: var(--box-shadow);
     filter: brightness(.9);
+    display: block;
+    /* Remove extra space below image */
+    border-radius: 0;
+    /* Remove border-radius or use var(--border-radius) */
 }
 
 .hero-text {
     display: flex;
-    border-top-right-radius: 50px;
     flex-direction: column;
     text-align: start;
     justify-content: start;
+    /* Consider static positioning on mobile? */
     position: absolute;
     bottom: 0%;
+    left: 0;
+    right: 0;
+    /* Stretch across bottom */
     background-color: var(--primary-color);
-    padding: 64px;
+    padding: 24px 20px;
+    /* Reduced padding for mobile */
     color: var(--text-color-light);
+    border-top-right-radius: 30px;
+    /* Smaller radius */
 }
 
 .hero-text h5 {
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h3);
+    /* Adjust for mobile if h1 is too big */
+    margin-bottom: 8px;
 }
 
 .hero-text p {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size);
+    /* Adjust for mobile */
+    margin-bottom: 16px;
 }
 
 .btn {
     background-color: var(--secondary-color);
     color: var(--text-color-light);
     border: none;
-    padding: 16px 32px;
-    margin: 32px 0px 0px 0px;
+    padding: 12px 24px;
+    /* Smaller padding */
+    margin: 16px 0 0 0;
+    /* Adjusted margin */
     border-radius: 50px;
     width: max-content;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
 }
 
+/* --- Generic Content Section --- */
 .section-contant {
     height: fit-content;
-    padding: 64px;
-    margin: 64px;
-
+    padding: 32px 20px;
+    /* Reduced padding */
+    margin: 32px 0;
+    /* Vertical margin only, remove horizontal */
+    text-align: center;
+    /* Center align text */
 }
 
 .section-contant h3 {
     font-size: var(--font-size-h3);
     color: var(--primary-color);
-    padding: var(--padding);
+    padding-bottom: var(--padding);
+    /* Use specific padding */
+    margin-bottom: 16px;
 }
 
 .section-contant p {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size);
+    /* Adjust for mobile */
     color: var(--text-shade);
+    text-align: left;
+    /* Keep paragraphs left-aligned */
+    max-width: 600px;
+    /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .divider {
     display: flex;
+    flex-direction: column;
+    /* Stack vertically on mobile */
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
 }
 
 .para1 {
-    width: 30%;
-    padding: var(--padding);
+    width: 100%;
+    /* Full width on mobile */
+    padding: 0;
+    /* Remove extra padding */
+    text-align: left;
 }
 
 .divider img {
-    width: 70%;
-    padding: var(--padding);
-}
-
-/* --- Basic Setup & Variables --- */
-:root {
-    --text-color: #333;
-    /* Dark grey for text */
-    --background-color: #fdfaf5;
-    /* Off-white / Cream background */
-    --cite-color: #555;
-    /* Slightly lighter grey for citation */
-    --serif-font: 'Garamond', 'Merriweather', Georgia, serif;
-    /* Example serif fonts */
+    width: 100%;
+    /* Full width on mobile */
+    max-width: 400px;
+    /* Limit max image width */
+    height: auto;
+    padding: 0;
+    /* Remove extra padding */
 }
 
 /* --- Book Cover Container --- */
 .book-back-cover {
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 30px;
+    padding: 24px 20px;
+    /* Reduced padding */
     width: 100%;
     line-height: 1.6;
-    font-size: var(--font-size-lg);
-    /* Base font size, adjust as needed */
+    font-size: var(--font-size);
+    /* Base font size for mobile */
+    margin: 32px 0;
+    /* Add some vertical margin */
 }
 
-/* --- Top Section (Description + Image) --- */
+/* Top Section (Mobile: Stacked) */
 .top-section {
     display: flex;
+    flex-direction: column;
+    /* Stack image and text */
     gap: 20px;
-    /* Space between text and image */
-    align-items: flex-start;
-    /* Align items to the top */
+    align-items: center;
+    /* Center items */
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .description {
-    flex: 1;
-    /* Allow text to take available space */
+    order: 2;
+    /* Text below image */
+    text-align: left;
 }
 
 .description p {
     margin: 0;
-    /* Remove default paragraph margin */
 }
 
 .image-container {
-    flex-shrink: 0;
-    /* Prevent image container from shrinking */
+    order: 1;
+    /* Image above text */
+    width: 100%;
+    text-align: center;
 }
 
 .author-image {
-    display: block;
-    /* Remove extra space below image */
-    max-width: 340px;
-    /* Adjust image width */
+    display: inline-block;
+    /* Allow centering */
+    max-width: 80%;
+    /* Smaller image on mobile */
     height: auto;
-    /* filter: grayscale(100%); Optional: make image black and white */
+    /* filter: grayscale(100%); */
 }
 
-/* --- Reviews Section --- */
+/* Reviews Section */
 .reviews-section {
     margin-bottom: 30px;
 }
 
 .reviews-section blockquote {
     margin: 0 0 20px 0;
-    /* Reset default margins, add bottom margin */
     padding: 0;
-    font-size: 0.95em;
-    /* Slightly smaller font for quotes */
-    /* Consider adding slight indentation if needed */
-    /* padding-left: 15px; */
-    /* border-left: 2px solid #eee; */
+    font-size: 0.9em;
+    /* Slightly smaller */
 }
 
 .reviews-section blockquote cite {
     display: block;
-    /* Put citation on its own line */
     text-align: right;
     font-style: normal;
-    /* Or italic if preferred */
     color: var(--cite-color);
-    font-size: 0.9em;
+    font-size: 0.85em;
+    /* Slightly smaller */
     margin-top: 5px;
 }
 
-/* --- Bottom Section (ISBN, Publisher, Price) --- */
+/* Bottom Section (Mobile: Stacked) */
 .bottom-section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    /* Align items to the bottom */
+    flex-direction: column;
+    /* Stack */
+    align-items: flex-start;
+    /* Align items left */
     gap: 20px;
     padding-top: 20px;
     border-top: 1px solid #eee;
-    /* Subtle separator line */
 }
 
-/* --- ISBN / Barcode --- */
 .isbn-barcode {
     font-family: 'Courier New', Courier, monospace;
-    /* Monospace for ISBN */
-    font-size: 0.85em;
+    font-size: 0.8em;
+    /* Smaller */
     color: #444;
+    width: 100%;
+    /* Take full width */
 }
 
 .isbn-text {
@@ -184,8 +256,8 @@ main {
 }
 
 .barcode-placeholder {
-    text-align: center;
-    /* Center numbers relative to barcode */
+    text-align: left;
+    /* Align left */
 }
 
 .barcode-top-number {
@@ -193,20 +265,16 @@ main {
     font-size: 0.9em;
     margin-bottom: 2px;
     text-align: right;
-    /* Align 90000 to the right */
     padding-right: 5px;
-    /* Adjust spacing */
 }
 
 .barcode-image {
     display: block;
-    /* Prevent extra space */
-    width: 130px;
-    /* Adjust barcode width */
+    width: 110px;
+    /* Smaller barcode */
     height: auto;
-    /* Maintain aspect ratio */
-    margin: 0 auto;
-    /* Center barcode image */
+    margin: 0 0 0 0;
+    /* Align left */
 }
 
 .barcode-bottom-number {
@@ -214,32 +282,257 @@ main {
     font-size: 0.9em;
     margin-top: 3px;
     letter-spacing: 1px;
-    /* Add spacing to numbers */
 }
 
-
-/* --- Publisher & Price --- */
+/* Publisher & Price (Mobile: Left Aligned) */
 .publisher-price {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    /* Align text to the right */
-    text-align: right;
+    align-items: flex-start;
+    /* Align left */
+    text-align: left;
+    width: 100%;
 }
 
 .publisher-info {
-    font-size: 0.85em;
+    font-size: 0.8em;
+    /* Smaller */
     color: var(--cite-color);
     margin-bottom: 10px;
 }
 
 .publisher-info span {
     display: block;
-    /* Each line of publisher info */
 }
 
 .price {
-    font-size: 1.4em;
+    font-size: 1.2em;
+    /* Slightly smaller */
     font-weight: bold;
     color: var(--text-color);
+}
+
+
+/* ============================================ */
+/* === Tablet Styles (e.g., 768px and up) === */
+/* ============================================ */
+@media (min-width: 768px) {
+
+    .hero-text {
+        padding: 48px 64px;
+        /* Increase padding */
+        border-top-right-radius: 50px;
+        /* Restore radius */
+        max-width: 70%;
+        /* Limit width on larger screens */
+        left: 0;
+        /* Allow positioning from bottom/right if needed */
+        right: 0;
+    }
+
+    .hero-text h5 {
+        font-size: var(--font-size-h1);
+        /* Restore larger font size */
+    }
+
+    .hero-text p {
+        font-size: var(--font-size-lg);
+        /* Restore larger font size */
+    }
+
+    .btn {
+        padding: 16px 32px;
+        /* Restore padding */
+        margin: 32px 0 0 0;
+        /* Restore margin */
+    }
+
+    .section-contant {
+        padding: 64px;
+        /* Restore padding */
+        margin: 64px 0;
+        /* Keep vertical margin */
+        text-align: left;
+        /* Align heading left */
+    }
+
+    .section-contant p {
+        font-size: var(--font-size-lg);
+        /* Restore larger font size */
+        margin-left: 0;
+        /* Remove auto margins */
+        margin-right: 0;
+    }
+
+    .divider {
+        flex-direction: row;
+        /* Side-by-side */
+        align-items: flex-start;
+        /* Align top */
+        gap: 40px;
+        margin-top: 32px;
+    }
+
+    .para1 {
+        width: 40%;
+        /* Adjust width */
+        padding: 0;
+    }
+
+    .divider img {
+        width: 60%;
+        /* Adjust width */
+        max-width: none;
+        /* Remove mobile max-width */
+        padding: 0;
+    }
+
+    .book-back-cover {
+        padding: 30px 40px;
+        /* Adjust padding */
+        font-size: var(--font-size-lg);
+        /* Restore base font size */
+        margin: 64px 0;
+    }
+
+    /* Top Section (Tablet: Side-by-side) */
+    .top-section {
+        flex-direction: row;
+        /* Side-by-side */
+        align-items: flex-start;
+        text-align: left;
+        gap: 30px;
+        /* Adjust gap */
+    }
+
+    .description {
+        order: 1;
+        /* Text first */
+        flex: 1;
+        /* Allow text to take space */
+    }
+
+    .image-container {
+        order: 2;
+        /* Image second */
+        flex-shrink: 0;
+        /* Prevent shrinking */
+        width: auto;
+        /* Reset width */
+    }
+
+    .author-image {
+        max-width: 280px;
+        /* Adjust size for tablet */
+        display: block;
+    }
+
+    /* Reviews Section */
+    .reviews-section blockquote {
+        font-size: 0.95em;
+    }
+
+    .reviews-section blockquote cite {
+        font-size: 0.9em;
+    }
+
+    /* Bottom Section (Tablet: Side-by-side) */
+    .bottom-section {
+        flex-direction: row;
+        /* Side-by-side */
+        justify-content: space-between;
+        align-items: flex-end;
+        /* Align to bottom */
+    }
+
+    .isbn-barcode {
+        font-size: 0.85em;
+        width: auto;
+        /* Reset width */
+    }
+
+    .barcode-placeholder {
+        text-align: center;
+        /* Restore centering if needed */
+    }
+
+    .barcode-image {
+        width: 130px;
+        /* Restore size */
+        margin: 0 auto;
+        /* Center image */
+    }
+
+    /* Publisher & Price (Tablet: Right Aligned) */
+    .publisher-price {
+        align-items: flex-end;
+        /* Align right */
+        text-align: right;
+        width: auto;
+        /* Reset width */
+    }
+
+    .publisher-info {
+        font-size: 0.85em;
+    }
+
+    .price {
+        font-size: 1.4em;
+        /* Restore size */
+    }
+}
+
+
+/* ============================================ */
+/* === Desktop Styles (e.g., 1024px and up) === */
+/* ============================================ */
+@media (min-width: 1024px) {
+
+    .hero-text {
+        padding: 64px;
+        /* Original large padding */
+        max-width: 60%;
+        /* Further adjust max width */
+    }
+
+    .section-contant {
+        padding: 64px 80px;
+        /* Larger horizontal padding */
+        margin: 80px 0;
+    }
+
+    .divider {
+        gap: 50px;
+        /* Increase gap */
+    }
+
+    .para1 {
+        width: 30%;
+        /* Original width */
+    }
+
+    .divider img {
+        width: 70%;
+        /* Original width */
+    }
+
+    .book-back-cover {
+        padding: 40px 60px;
+        /* Adjust padding */
+        max-width: 960px;
+        /* Optional: Max width for readability */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .top-section {
+        gap: 40px;
+        /* Increase gap */
+    }
+
+    .author-image {
+        max-width: 340px;
+        /* Original max size */
+    }
+
 }

@@ -73,7 +73,7 @@ class SFooter extends HTMLElement {
                 <a href="http://">Return and Refund Policy</a>
             </p>
             <div class="payment-icons">
-                <svg xmlns="http://www.w3.org/2000/svg" class="maestro" xml:space="preserve" viewBox="0 0 30 30"
+                <svg xmlns="http://www.w3.org/2000/svg" class="maestro" xml:space="preserve"  width="36px" height="36px" viewBox="0 0 30 30"
                     id="maestro">
                     <g fill="#fff">
                         <path

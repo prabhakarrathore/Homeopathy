@@ -1,5 +1,5 @@
 main {
-    height: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -24,11 +24,11 @@ main {
 }
 
 .hero-text h5 {
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h4);
 }
 
 .hero-text p {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size);
 }
 
 .btn {
@@ -250,13 +250,13 @@ main {
 }
 
 .conditions-list {
-    width: 80%;
+    width: 100%;
     font-size: var(--font-size-lg);
     color: var(--text-shade);
     list-style: none;
-    text-align: center;
+    text-align: start;
     padding: 0;
-    column-count: 3;
+    column-count: 2;
     /* Create 3 columns */
     column-gap: 64px;
 }
@@ -414,4 +414,165 @@ main {
         flex-basis: 48%;
         /* Slightly adjust image width if needed */
     }
+}
+
+
+/* ============================================ */
+/* === Tablet Styles (e.g., 768px and up) === */
+/* ============================================ */
+@media (min-width: 768px) {
+
+    .hero-text {
+        padding: 48px 64px;
+        /* Increase padding */
+        border-top-right-radius: 50px;
+        /* Restore radius */
+        max-width: 70%;
+        /* Limit width on larger screens */
+        left: 0;
+        /* Allow positioning from bottom/right if needed */
+        right: 0;
+    }
+
+    .hero-text h5 {
+        font-size: var(--font-size-h1);
+        /* Restore larger font size */
+    }
+
+    .hero-text p {
+        font-size: var(--font-size-lg);
+        /* Restore larger font size */
+    }
+
+    .btn {
+        padding: 16px 32px;
+        /* Restore padding */
+        margin: 32px 0 0 0;
+        /* Restore margin */
+    }
+
+    .section-contant {
+        padding: 64px;
+        /* Restore padding */
+        margin: 64px 0;
+        /* Keep vertical margin */
+        text-align: left;
+        /* Align heading left */
+    }
+
+    .section-contant p {
+        font-size: var(--font-size-lg);
+        /* Restore larger font size */
+        margin-left: 0;
+        /* Remove auto margins */
+        margin-right: 0;
+    }
+
+
+    .conditions-list {
+        width: 80%;
+        font-size: var(--font-size-lg);
+        color: var(--text-shade);
+        list-style: none;
+        text-align: start;
+        padding: 0;
+        column-count: 3;
+        /* Create 3 columns */
+        column-gap: 64px;
+    }
+
+    .conditions-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        font-size: 0.95em;
+        break-inside: avoid-column;
+        /* Prevent items breaking across columns */
+    }
+
+    .conditions-list i {
+        color: var(--primary-color);
+    }
+
+
+}
+
+
+/* ============================================ */
+/* === Desktop Styles (e.g., 1024px and up) === */
+/* ============================================ */
+@media (min-width: 1024px) {
+    main {
+        height: 100vh;
+        position: relative;
+    }
+
+    .heroimg {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        filter: brightness(1.1);
+    }
+
+    .hero-text {
+        display: flex;
+        border-top-right-radius: 50px;
+        flex-direction: column;
+        text-align: start;
+        justify-content: start;
+        position: absolute;
+        bottom: 0.4%;
+        background-color: var(--primary-color);
+        padding: 64px;
+        color: var(--text-color-light);
+    }
+
+    .hero-text h5 {
+        font-size: var(--font-size-h1);
+    }
+
+    .hero-text p {
+        font-size: var(--font-size-lg);
+    }
+
+    .btn {
+        background-color: var(--secondary-color);
+        color: var(--text-color-light);
+        border: none;
+        padding: 16px 32px;
+        margin: 32px 0px;
+        border-radius: 50px;
+        width: max-content;
+    }
+
+
+    .conditions-list {
+        width: 80%;
+        font-size: var(--font-size-lg);
+        color: var(--text-shade);
+        list-style: none;
+        text-align: start;
+        padding: 0;
+        column-count: 3;
+        /* Create 3 columns */
+        column-gap: 64px;
+    }
+
+    .conditions-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        font-size: 0.95em;
+        break-inside: avoid-column;
+        /* Prevent items breaking across columns */
+    }
+
+    .conditions-list i {
+        color: var(--primary-color);
+    }
+
+
+
 }

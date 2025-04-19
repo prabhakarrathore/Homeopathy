@@ -44,6 +44,7 @@ main {
 
 
 .section-contant {
+
     height: fit-content;
     padding: 64px;
     margin: 64px;
@@ -67,6 +68,8 @@ main {
 
 .divider {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .para1 {
@@ -77,4 +80,43 @@ main {
 .divider img {
     width: 40%;
     padding: var(--padding);
+}
+
+@media (max-width: 768px) {
+    .hero-text {
+        padding: 32px;
+        bottom: 0;
+    }
+
+    .hero-text h5 {
+        font-size: var(--font-size-h2);
+    }
+
+    .hero-text p {
+        font-size: var(--font-size);
+    }
+
+    .btn {
+        padding: 12px 24px;
+        margin: 16px 0px;
+    }
+
+    .divider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-contant {
+        padding: 32px;
+        text-align: start;
+        margin: 32px;
+    }
+
+    .section-contant h3 {
+        font-size: var(--font-size-h3);
+    }
+
+    .section-contant p {
+        font-size: var(--font-size);
+    }
 }

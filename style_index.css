@@ -40,6 +40,8 @@ main {
     margin: 32px 0px;
     border-radius: 50px;
     width: max-content;
+    cursor: pointer;
+    text-align: center;
 }
 
 .product-section {
@@ -49,11 +51,8 @@ main {
     justify-content: center;
     gap: 50px;
     padding: var(--padding);
-    height: 100%;
-}
-
-.product-section {
     height: 600px;
+    /* Combined height rule */
 }
 
 .product-div1 img {
@@ -61,76 +60,90 @@ main {
     width: 400px;
     aspect-ratio: 16/9;
     object-fit: cover;
+    border-radius: 8px;
+    /* Added from previous suggestion */
+    margin-bottom: 16px;
+    /* Added from previous suggestion */
 }
 
 .product-div1 h5 {
     font-size: var(--font-size-h5);
+    margin-bottom: 8px;
+    /* Added from previous suggestion */
 }
 
 .product-div1 p {
     width: 400px;
+    /* Consider making this responsive (e.g., width: 100%) */
+    max-width: 360px;
+    /* Added from previous suggestion */
     font-size: var(--font-size);
-    padding: 20px;
+    padding: 0 16px 20px;
+    /* Adjusted padding */
+    flex-grow: 1;
+    /* Added from previous suggestion */
 }
 
 .product-div1 .btn {
-    padding-top: var(--padding);
-    margin: 16px 0px 0px 0px;
+    /* padding-top: var(--padding); */
+    /* Padding on button itself is better */
+    margin: auto 0 16px 0;
+    /* Adjusted margin */
 }
 
-/* ////////////////// */
-
-
-/* --- Testimonial Section Layout --- */
 .testimonial-section {
     width: 100%;
     height: 100%;
+    /* Consider 'auto' */
+    padding: 64px 0;
+    /* Added from previous suggestion */
 }
 
 .testimonial-container {
     display: flex;
     justify-content: center;
-    padding: 64px;
+    padding: 64px 48px;
+    /* Adjusted padding */
     flex-direction: column;
     gap: 40px;
+    align-items: center;
+    /* Added from previous suggestion */
 }
 
-/* On larger screens, place intro and slider side-by-side */
 @media (min-width: 992px) {
     .testimonial-container {
         flex-direction: row;
         align-items: center;
-        /* Vertically align items */
     }
 
     .testimonial-intro {
         flex: 0 0 35%;
-        /* Intro takes up ~35% width */
         margin-right: 5%;
+        text-align: left;
+    }
+
+    .testimonial-intro p {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .testimonial-slider-wrapper {
         flex: 1;
-        /* Slider takes remaining space */
+    }
+
+    .testimonial-nav {
+        justify-content: flex-start;
     }
 }
 
-/* --- Intro Content --- */
 .testimonial-intro {
     text-align: center;
-    /* Center text on small screens */
-}
-
-@media (min-width: 992px) {
-    .testimonial-intro {
-        text-align: left;
-        /* Align left on large screens */
-    }
+    max-width: 600px;
+    /* Added from previous suggestion */
 }
 
 .testimonial-intro h2 {
     font-size: clamp(2rem, 5vw, 3rem);
-    /* Responsive font size */
     color: var(--primary-text);
     font-weight: 700;
     line-height: 1.2;
@@ -145,32 +158,13 @@ main {
     max-width: 400px;
     /* Limit width of paragraph */
     margin-left: auto;
-    /* Center on small screens */
     margin-right: auto;
-    /* Center on small screens */
 }
 
-@media (min-width: 992px) {
-    .testimonial-intro p {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-
-/* --- Navigation Buttons --- */
 .testimonial-nav {
     display: flex;
     justify-content: center;
-    /* Center buttons on small screens */
     gap: 12px;
-}
-
-@media (min-width: 992px) {
-    .testimonial-nav {
-        justify-content: flex-start;
-        /* Align left on large screens */
-    }
 }
 
 .nav-btn {
@@ -188,9 +182,9 @@ main {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.nav-btn:hover {
+.nav-btn:hover:not(:disabled) {
+    /* Added :not(:disabled) */
     background-color: #e4e7ec;
-    /* Slightly darker gray on hover */
 }
 
 .nav-btn:disabled {
@@ -198,44 +192,40 @@ main {
     cursor: not-allowed;
 }
 
-/* --- Slider --- */
 .testimonial-slider-wrapper {
     overflow: hidden;
-    /* Crucial: Hides slides outside the view */
     position: relative;
-    /* For potential absolute positioning inside */
     width: 100%;
 }
 
 .testimonial-slider {
     display: flex;
-    /* No wrap: Items stay in a single line */
     flex-wrap: nowrap;
-    /* Smooth transition when transform changes */
     transition: transform 0.5s ease-in-out;
 }
 
-/* --- Testimonial Card --- */
 .testimonial-card {
-    height: 70vh;
+    /* height: 70vh; */
+    /* Consider replacing with min-height */
+    min-height: 400px;
+    /* Added from previous suggestion */
     flex: 0 0 100%;
-    /* Each card takes full width of the container */
     padding: 40px;
     border-radius: 16px;
-    margin-right: 20px;
-    /* Space between cards */
+    /* margin-right: 20px; */
+    /* Removed for better spacing control */
+    margin: 0;
+    /* Ensure no margin */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Ensure cards have a consistent minimum height */
     display: flex;
     flex-direction: column;
 }
 
-/* Remove margin from the last card */
 .testimonial-card:last-child {
-    margin-right: 0;
+    /* margin-right: 0; */
+    /* Not needed if margin removed from base */
 }
 
-/* Card Themes */
 .card-purple {
     background-color: var(--pagination-active);
     color: var(--card-purple-text);
@@ -251,38 +241,43 @@ main {
     color: var(--card-dark-text);
 }
 
-/* Card Content */
 .quote-icon {
-    margin: var(--margin);
+    /* margin: var(--margin); */
+    /* Use specific margin if needed */
+    margin-bottom: 16px;
+    /* Added from previous suggestion */
     display: flex;
-    /* Use flex to space the bars */
     gap: 6px;
+    height: 24px;
+    /* Added from previous suggestion */
 }
 
 .quote-icon img {
-    font-size: 2rem;
-    height: auto;
+    /* font-size: 2rem; */
+    /* Not applicable to img */
+    height: 100%;
+    /* Fills container height */
+    width: auto;
+    /* Maintains aspect ratio */
     mix-blend-mode: darken;
-    width: 48px;
-    /* Icon color */
+    /* If needed */
 }
-
 
 .quote {
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.6;
-    margin: 0 0 32px 0;
-    /* Reset blockquote margin */
+    margin: 0 0 24px 0;
+    /* Adjusted margin */
     flex-grow: 1;
-    /* Allow quote to take up space */
+    height: auto;
+    /* Removed fixed height */
 }
 
 .author {
     display: flex;
     align-items: center;
     margin-top: auto;
-    /* Push author to the bottom */
 }
 
 .avatar {
@@ -292,7 +287,6 @@ main {
     margin-right: 16px;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    /* Subtle border */
 }
 
 .author-info {
@@ -309,10 +303,8 @@ main {
     display: block;
     font-size: 0.9rem;
     opacity: 0.8;
-    /* Slightly less prominent */
 }
 
-/* --- Pagination --- */
 .testimonial-pagination {
     display: flex;
     justify-content: center;
@@ -324,38 +316,38 @@ main {
 .pagination-dot {
     background-color: var(--pagination-inactive);
     color: var(--pagination-inactive);
-    /* Make icon same color */
     border: none;
-    width: 24px;
-    /* Adjust size as needed */
-    height: 24px;
+    width: 10px;
+    /* Adjusted size */
+    height: 10px;
+    /* Adjusted size */
     border-radius: 50%;
     cursor: pointer;
     padding: 0;
-    font-size: 0.8rem;
-    /* Adjust icon size */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* font-size: 0.8rem; */
+    /* Removed if icon is hidden */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Added transform */
 }
 
 .pagination-dot.active {
     background-color: var(--pagination-active);
     color: var(--pagination-active);
+    /* If using icon color */
+    transform: scale(1.2);
+    /* Added from previous suggestion */
 }
 
 .pagination-dot:not(.active):hover {
     background-color: #d0d5dd;
-    /* Slightly darker gray on hover */
     color: #d0d5dd;
+    /* If using icon color */
 }
 
-/* Hide default heart icon shape, we just use the color */
 .pagination-dot i {
-    opacity: 1;
+    /* opacity: 1; */
+    display: none;
 }
-
 
 /* --- Base Styles & Variables --- */
 
